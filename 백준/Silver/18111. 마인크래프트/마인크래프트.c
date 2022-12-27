@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-//#define NDEBUG
 
 int arrmax(int* arr, int length) {
 	int max;
@@ -11,15 +10,6 @@ int arrmax(int* arr, int length) {
 		}
 	}
 	return max;
-}
-
-int arrmin(int* arr, int length) {
-	int min;
-	min = arr[0];
-	for (int i = 1; i < length; i++) {
-		min = min > arr[i] ? arr[i] : min;
-	}
-	return min;
 }
 
 int empty(int* arr, int length, int max) {
@@ -50,22 +40,11 @@ int main() {
 	long long int timesum = 0;
 	int emptysum;
 	int max;
-	int min;
 	int maxcnt = 0;
 	while (1) {
 		maxcnt = 0;
 		max = arrmax(arr, N * M);
 		emptysum = empty(arr, N * M, max);
-		min = arrmin(arr, N * M);
-#ifdef NDEBUG
-		printf("max = %d, min = %d, emptysum = %d, B = %d\n", max, min, emptysum, B);
-		for (int i = 0; i < N; i++) {
-			for (int j = 0; j < M; j++) {
-				printf("%d ", arr[i * M + j]);
-			}
-			printf("\n");
-		}
-#endif
 		if (isallsame(arr, N * M)) {
 			printf("%lld %d", timesum, max);
 			return 0;
