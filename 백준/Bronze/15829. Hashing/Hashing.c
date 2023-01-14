@@ -13,7 +13,7 @@ int main() {
 		arr[i] = str[i];
 		for (int j = 0; j < i; j++) {
 			arr[i] *= 31;
-			arr[i] -= (long long int)(arr[i] / 1234567891) * 1234567891;
+			arr[i] -= (int)(arr[i] / 1234567891) * 1234567891;
 		}
 		sum += arr[i];
 	}
