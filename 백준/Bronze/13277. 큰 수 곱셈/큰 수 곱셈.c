@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
+#define MAX 1100000
 
 void strReverse(char* str, int len) {
 	char tmp;
@@ -73,8 +74,8 @@ void FFT(cplx* P, cplx w, int n) {
 }
 
 int main() {
-	char* str1 = (char*)malloc(sizeof(char) * 301000);
-	char* str2 = (char*)malloc(sizeof(char) * 301000);
+	char* str1 = (char*)malloc(sizeof(char) * MAX);
+	char* str2 = (char*)malloc(sizeof(char) * MAX);
 	scanf("%s %s", str1, str2);
 	int len1 = strlen(str1);
 	int len2 = strlen(str2);
